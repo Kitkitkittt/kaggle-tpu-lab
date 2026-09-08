@@ -29,8 +29,8 @@ coding tools.
 - A Kaggle account that can use TPUs. Kaggle may require phone verification.
 - Available TPU quota and no other TPU session running on the same account.
 - About 5–20 minutes for startup, depending on cache availability. These timing
-  estimates come from the original project; this fork does not claim a new
-  successful benchmark until Kaggle provisions its TPU correctly.
+  estimates have not been independently re-benchmarked on this Kaggle account
+  because its automated TPU versions have received CPU-only sessions.
 
 ### What this guide will do
 
@@ -46,8 +46,7 @@ coding tools.
 > Stop the Kaggle session when finished and do not publish cell outputs that
 > contain the endpoint or generated key.
 
-Reviewed source: [Kitkitkittt/kaggle-tpu-lab](https://github.com/Kitkitkittt/kaggle-tpu-lab),
-based on the MIT-licensed [ARahim3/kaggle-tpu-lab](https://github.com/ARahim3/kaggle-tpu-lab).
+Reviewed source: [Kitkitkittt/kaggle-tpu-lab](https://github.com/Kitkitkittt/kaggle-tpu-lab).
 """
 
 
