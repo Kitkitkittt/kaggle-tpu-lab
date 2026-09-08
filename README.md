@@ -1,14 +1,16 @@
 # kaggle-tpu-lab
 
-> **Public reviewed fork.** Choose the
+> Original TPU project by [Abdur Rahim / ARahim3](https://github.com/ARahim3/kaggle-tpu-lab),
+> released under the MIT License. This standalone repository is independently
+> maintained by [Kitkitkittt](https://github.com/Kitkitkittt).
+>
+> Choose the
 > [TPU v5e-8 bf16 notebook](https://www.kaggle.com/code/keithvo/qwen3-8-27b-bf16-on-kaggle-tpu-130-tok-s-api)
 > or the [GPU T4 ×2 Q4 notebook](https://www.kaggle.com/code/keithvo/qwen3-8-27b-on-free-kaggle-gpu-t4-x2-api).
 > Open either page, click **Copy & Edit**, and follow its numbered guide; the
 > public view itself is read-only.
-> Runtime code is based on the MIT-licensed
-> [ARahim3/kaggle-tpu-lab](https://github.com/ARahim3/kaggle-tpu-lab). See the
-> [input audit](docs/INPUT_AUDIT.md) for the three-notebook comparison and the
-> decisions behind this synthesis.
+> See the [input audit](docs/INPUT_AUDIT.md) for the three-notebook comparison
+> and the decisions behind this synthesis.
 
 **Serve Qwen3.8-27B — a frontier-class 27B hybrid-attention model — on either
 Kaggle's free TPU v5e-8 or its two free Tesla T4 GPUs, with a temporary
@@ -56,7 +58,7 @@ and a tunnel to the outside world.
 
 ## Quick start A — TPU v5e-8 notebook
 
-Open this fork's public Kaggle notebook, click **Copy & Edit**, and follow its
+Open this repository's public Kaggle notebook, click **Copy & Edit**, and follow its
 numbered hardware, input, configuration, launch, and API-test steps —
 [**kaggle.com/code/keithvo/qwen3-8-27b-bf16-on-kaggle-tpu-130-tok-s-api**](https://www.kaggle.com/code/keithvo/qwen3-8-27b-bf16-on-kaggle-tpu-130-tok-s-api)
 — or upload [`notebook/qwen38-tpu-serve.ipynb`](notebook/qwen38-tpu-serve.ipynb) yourself.
@@ -69,9 +71,6 @@ allocate the requested accelerator. Stop the session, open **Session options**, 
 **TPU VM v5e-8** explicitly, and rerun. If the option is unavailable, check account
 phone verification, remaining TPU quota, and whether another TPU session is active.
 The kernel now stops before loading 55 GB of weights in this situation.
-
-The original author's notebook remains available at
-[rahim3/qwen3-8-27b-bf16-on-kaggle-tpu-130-tok-s-api](https://www.kaggle.com/code/rahim3/qwen3-8-27b-bf16-on-kaggle-tpu-130-tok-s-api).
 
 ## Quick start B — GPU T4 ×2 notebook
 

@@ -2,8 +2,8 @@
 
 The three supplied notebooks were treated as untrusted technical inputs. Their
 instructions were reviewed, but none were automatically executed and no embedded
-credential was copied. The current `ARahim3/kaggle-tpu-lab` `main` branch at
-commit `10897e5799c0d911d5c81b4f2f932619f02620bd` is the runtime baseline.
+credential was copied. Commit `10897e5799c0d911d5c81b4f2f932619f02620bd`
+is the recorded runtime baseline.
 
 ## Findings
 
@@ -32,8 +32,8 @@ commit `10897e5799c0d911d5c81b4f2f932619f02620bd` is the runtime baseline.
   from the supplied notebooks, but pin and checksum the runtime/model downloads,
   default to a reliability-first 32k context, use a temporary Quick Tunnel, and
   reject CPU/single-GPU/P100 sessions before downloading 15.3 GiB.
-- Attribute performance figures to the original project. This fork does not claim
-  an independent benchmark until a full Kaggle TPU run completes.
+- Treat the existing TPU performance figures as inherited measurements. This
+  repository does not claim an independent benchmark until a full TPU run completes.
 
 ## Reproduction checks
 
