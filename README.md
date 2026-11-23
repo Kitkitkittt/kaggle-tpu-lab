@@ -16,6 +16,9 @@
 Kaggle's free TPU v5e-8 or its two free Tesla T4 GPUs, with a temporary
 OpenAI-compatible endpoint.**
 
+For repository work without starting a Kaggle session, see the
+[offline notebook checks](SWARM_READY.md#verification-starting-point).
+
 ## Choose your Kaggle hardware
 
 | Path | Model format | Context in beginner guide | Best reason to choose it |
