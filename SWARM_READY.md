@@ -21,11 +21,16 @@ If a `swarm-ready` skill is installed, load it. Otherwise execute the documented
 
 ## Repository starting point
 
-Read: [README.md](README.md), [docs](docs), [tests](tests), [.github](.github).
+Start with the [README source map](README.md#whats-actually-in-this-repo),
+the [input audit](docs/INPUT_AUDIT.md), and the [check workflow](.github/workflows/check.yml).
+Reuse [PR #4](https://github.com/Kitkitkittt/kaggle-tpu-lab/pull/4) for this documentation
+slice. Edit notebook generator inputs rather than the generated notebooks when
+a separate task requires a notebook change.
 
-Qualify one existing notebook or runtime change against the repository's pinned source and offline checks.
-
-Treat accelerator availability, quota and real execution as separate evidence. Avoid starting parallel training or paid compute from a documentation trigger.
+[Issue #3](https://github.com/Kitkitkittt/kaggle-tpu-lab/issues/3) is a separate
+runtime gate: a signed-in Kaggle session must obtain eight TPU devices and
+reach `PHASE ready` without `PHASE failed`. Metadata, local regressions, and a
+generic Kaggle completion status do not satisfy it. Leave the issue open.
 
 The base above is an inspection snapshot, not a permanent working branch. Refresh the actual target branch, current issues, incumbent worker and applicable nested instructions before editing. Preserve unrelated changes and upstream/fork boundaries.
 
@@ -41,7 +46,22 @@ The base above is an inspection snapshot, not a permanent working branch. Refres
 
 ## Verification starting point
 
-No executable acceptance command was established by this bounded source inspection. Read `README.md`, `tests`, `.github` and record the narrowest existing check before implementation. Do not invent a `test` command or infer that the repository has no tests from this gap. For a documentation-only task, check links, factual source anchors and whitespace; do not build unrelated application code.
+From the repository root, use Python 3.12 (the version in the check workflow).
+These commands require no Kaggle credentials or accelerator:
+
+```sh
+python3.12 -B tools/sync_notebook.py --check
+python3.12 -B tools/sync_gpu_notebook.py --check
+python3.12 -B -m unittest discover -s tests -v
+```
+
+Expect each command to exit 0, both notebooks reported synchronized, and the
+mocked scratch-directory and empty-generation regressions to pass. The
+generators compare artifacts without running notebook cells or writing them.
+The unchanged workflow also compiles Python and parses the JSON artifacts.
+Check local links and `git diff --check` before handing back documentation.
+Do not run `launch.py`, launch a notebook, download models or datasets, open
+a tunnel, or call an inference endpoint for this check.
 
 ## Required handoff result
 
